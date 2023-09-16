@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from api.webservice.api.baiduWiki import baiduWikiApi
+from webservice.api.baiduWiki import baiduWikiApi
 
 """
     在这里注册对应的API调用接口
