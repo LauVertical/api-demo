@@ -1,4 +1,0 @@
-urllib3<2
-numpy==1.23.5
-tornado==6.2
-beautifulsoup4==4.11.2

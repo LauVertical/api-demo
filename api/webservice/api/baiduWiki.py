@@ -3,8 +3,8 @@
 import re
 from bs4 import BeautifulSoup
 
-from webservice.api.apiBase import apiBase
-from webservice.requestUtil import *
+from api.webservice.api.apiBase import apiBase
+from api.webservice.requestUtil import *
 
 
 class baiduWikiApi(apiBase):
