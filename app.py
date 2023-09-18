@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 import json
 import traceback
+import argparse
 
 from flask import Flask, request, jsonify, make_response
 from webservice.apiList import apiList
@@ -90,3 +91,14 @@ def api_list():
 
             return jsonify(response)
 
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Tornado Web Server')
+    parser.add_argument('--redis_url', type=str, default="localhost", required=False, help='URL to listen on')
+    parser.add_argument('--port', type=int, default=6699, required=False, help='Port number to listen on')
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_arguments()
+    app.run(port=args.port)

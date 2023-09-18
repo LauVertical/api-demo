@@ -8,7 +8,7 @@ This is a study project, created by Lau Mious. Using tornado to setup serveless 
 
 Click
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/LauVertical/api-demo.git)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Yidadaa/ChatGPT-Next-Web)
 
 Enjoy :)
 

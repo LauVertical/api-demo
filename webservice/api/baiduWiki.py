@@ -17,6 +17,7 @@ class baiduWikiApi(apiBase):
     def _phasePage(self, page) -> str:
         soup = BeautifulSoup(page, 'html.parser')
         content_divs = soup.find_all('div', {'class': ['lemma-summary J-summary', 'para MARK_MODULE']})
+        # content_divs = soup.find_all('div', {'class': ['lemma-summary J-summary']})
         for div in content_divs:
             sup_tags = div.find_all('sup', {'class': ['sup--normal']})
             for sup in sup_tags:
