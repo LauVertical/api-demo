@@ -31,23 +31,14 @@ def query():
         try:
             data = request.json
             if not data:
-                return jsonify({
-                    'status': 400,
-                    'message': 'Cannot request from null query'
-                })
+                return 'Cannot request from null query'
             api_name = data.get("api_name")
             if not api_name:
-                return jsonify({
-                    'status': 500,
-                    'message': traceback.format_exc()
-                })
+                return traceback.format_exc()
 
             api = apiList.get(api_name)
             if not api:
-                return jsonify({
-                    'status': 500,
-                    'message': f'API {api_name} not found'
-                })
+                return f'API {api_name} not found'
 
             req = {}
             if "query" in data:
@@ -60,10 +51,7 @@ def query():
             return content
 
         except Exception:
-            return jsonify({
-                'status': 500,
-                'message': traceback.format_exc()
-            })
+            return traceback.format_exc()
 
 
 @app.route('/apilist', methods=['GET', 'OPTIONS'])

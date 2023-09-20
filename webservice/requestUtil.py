@@ -10,7 +10,7 @@ class METHOD(Enum):
     GET = "GET"
 
 
-class requestObjcet(object):
+class requestObject(object):
 
     def __init__(self, header: dict, data: dict,
                  url: str, method: METHOD):
@@ -20,7 +20,7 @@ class requestObjcet(object):
         self.url = url
 
 
-def requestPage(req: requestObjcet) -> dict:
+def requestPage(req: requestObject) -> dict:
     try:
         if req.method == METHOD.GET:
             response = requests.get(url=req.url, headers=req.header)
@@ -30,10 +30,10 @@ def requestPage(req: requestObjcet) -> dict:
         response.raise_for_status()  # 如果出现错误，会抛出一个异常
         return {
             "status": 200,
-            "msg": response.text
+            "msg": response
         }
     except requests.exceptions.RequestException as e:
         return {
             "status": 500,
-            "msg": e.response.text
+            "msg": e.response
         }

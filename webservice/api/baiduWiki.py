@@ -11,8 +11,8 @@ class baiduWikiApi(apiBase):
 
     def _getWebPage(self, query) -> str:
         url = "https://baike.baidu.com/item/" + query["queryKW"] + "?fromModule=lemma_search-box"
-        req = requestObjcet(url=url, header={}, data={}, method=METHOD.GET)
-        return requestPage(req)["msg"]
+        req = requestObject(url=url, header={}, data={}, method=METHOD.GET)
+        return requestPage(req)["msg"].text
 
     def _phasePage(self, page) -> str:
         soup = BeautifulSoup(page, 'html.parser')
